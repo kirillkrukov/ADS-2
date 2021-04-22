@@ -1,7 +1,6 @@
 // Copyright 2021 NNTU-CS
 
 int countPairs1(int* arr, int len, int value) {
-    
     int k = 0;
     int sum = 0;
     for (int i = 0; i < len; i++) {
@@ -14,10 +13,9 @@ int countPairs1(int* arr, int len, int value) {
     }
     return k;
 }
-
-
+ 
+ 
 int countPairs2(int* arr, int len, int value) {
-    
     int cout = 0, left = 0, right = len, middle;
   while (left < right - 1) {
     middle = (left + right) / 2;
@@ -35,9 +33,8 @@ int countPairs2(int* arr, int len, int value) {
   }
   return cout;
 }
-
+ 
 int countPairs3(int* arr, int len, int value) {
-    
     int left = 0, right = len, middle = 0;
     while (left < right - 1) {
         middle = (left + right) / 2;
