@@ -18,20 +18,22 @@ int countPairs1(int* arr, int len, int value) {
 
 int countPairs2(int* arr, int len, int value) {
     
-    int k = 0;
-    int sum = 0;
-    int i = len - 1;
-    while (arr[i] > value) {
-        i--;
+    int cout = 0, left = 0, right = len, middle;
+  while (left < right - 1) {
+    middle = (left + right) / 2;
+    if (arr[middle] <= value)
+      left = middle;
+    else
+      right = middle;
+  }
+  len = right;
+  for (int i = 0; i < len-1; i++) {
+    for (int j = len; j > i; j--) {
+      if (arr[i] + arr[j] == value)
+        cout++;
     }
-    for (i; i > 0; i--) {
-        for (int j = 0; j < len; j++) {
-            sum = arr[i] + arr[j];
-            if (sum == value) {
-                k++;
-            }
-        }
-    }
+  }
+  return cout;
 }
 
 int countPairs3(int* arr, int len, int value) {
